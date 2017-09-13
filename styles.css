@@ -4,12 +4,19 @@
 		#my-header {
 				color: #FF0000;
 			}
+		#my-header{text-align: center;
+		}
+		#my-list-item{text-align: center;
+		}
 		#my-list-item {
 			font-size: 22px;
-				}
+		}
 		#my-list-item a {
 			color: #00AA00;
 		}
 		#my-list-item a:hover {
 			color: #0000FF;
 		}
+		ul {list-style-type: none;
+		}
+		#jellyfish {margin-top: 25px}

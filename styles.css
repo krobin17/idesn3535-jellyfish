@@ -7,26 +7,32 @@
 			{font-family: 'Lato', sans-serif;}
 
 		#my-header 
-			{color: #000080;}
+			{color: #000080;
+			text-align: center;
+			margin-top: 25px}
+
+		#my-list-item
+			{text-align: center;
+			font-size: 22px;
+			margin-left: 150px;
+			margin-right: 150px}
 		#my-list-item 
 			a {color: #00b38f;}
-		#my-list-item2 
-			{color: #00b38f;}
 		#my-list-item 
 			a:hover {color: #CD853F;}
-		#title
-			{color: #CD853F}
-
-		#my-header
-			{text-align: center;}
-		#my-list-item
-			{text-align: center;}
-		#my-list-item 
-			{font-size: 22px;}
+		
 		#my-list-item2 
-			{font-size: 22px;}
+			{font-size: 22px;
+			margin-left: 150px;
+			margin-right: 150px}
+		#my-list-item2 
+			{color: #00b38f;}
+
 		#title 
-			{font-size: 22px;}
+			{font-size: 22px;
+			margin-left: 150px;
+			margin-right: 150px;
+			color: #CD853F}
 
 		#jellyfish 
 			{margin-top: 25px}
@@ -35,17 +41,3 @@
 			{margin-left: 150px}
 		p
 			{margin-right: 150px}
-		#title 
-			{margin-left: 150px}
-		#title
-			{margin-right: 150px}
-		#my-list-item 
-			{margin-left: 150px}
-		#my-list-item
-			{margin-right: 150px}
-		#my-list-item2
-			{margin-left: 150px}
-		#my-list-item2
-			{margin-right: 150px}
-		#my-header 
-			{margin-top: 25px}

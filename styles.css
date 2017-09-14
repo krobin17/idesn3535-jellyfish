@@ -5,12 +5,10 @@
 			{font-family: 'Lato', sans-serif;}
 		li 
 			{font-family: 'Lato', sans-serif;}
-
 		#my-header 
 			{color: #000080;
 			text-align: center;
 			margin-top: 25px}
-
 		#my-list-item
 			{text-align: center;
 			font-size: 22px;
@@ -19,25 +17,21 @@
 		#my-list-item 
 			a {color: #00b38f;}
 		#my-list-item 
-			a:hover {color: #CD853F;}
-		
+			a:hover {color: #CD853F}
 		#my-list-item2 
 			{font-size: 22px;
 			margin-left: 150px;
 			margin-right: 150px}
 		#my-list-item2 
 			{color: #00b38f;}
-
 		#title 
 			{font-size: 22px;
 			margin-left: 150px;
 			margin-right: 150px;
 			color: #CD853F}
-
 		#jellyfish 
 			{margin-top: 25px}
 					body 
 		p 
-			{margin-left: 150px}
-		p
-			{margin-right: 150px}
+			{margin-left: 150px;
+			margin-right: 150px}

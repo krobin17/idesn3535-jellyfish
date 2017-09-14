@@ -1,22 +1,51 @@
-		body {
-			font-family: 'Oswald', sans-serif;
-		}
-		#my-header {
-				color: #FF0000;
-			}
-		#my-header{text-align: center;
-		}
-		#my-list-item{text-align: center;
-		}
-		#my-list-item {
-			font-size: 22px;
-		}
-		#my-list-item a {
-			color: #00AA00;
-		}
-		#my-list-item a:hover {
-			color: #0000FF;
-		}
-		ul {list-style-type: none;
-		}
-		#jellyfish {margin-top: 25px}
+		body 
+		h1 
+			{font-family: 'Kaushan Script', cursive;}
+		p 
+			{font-family: 'Lato', sans-serif;}
+		li 
+			{font-family: 'Lato', sans-serif;}
+
+		#my-header 
+			{color: #000080;}
+		#my-list-item 
+			a {color: #00b38f;}
+		#my-list-item2 
+			{color: #00b38f;}
+		#my-list-item 
+			a:hover {color: #CD853F;}
+		#title
+			{color: #CD853F}
+
+		#my-header
+			{text-align: center;}
+		#my-list-item
+			{text-align: center;}
+		#my-list-item 
+			{font-size: 22px;}
+		#my-list-item2 
+			{font-size: 22px;}
+		#title 
+			{font-size: 22px;}
+
+		#jellyfish 
+			{margin-top: 25px}
+					body 
+		p 
+			{margin-left: 150px}
+		p
+			{margin-right: 150px}
+		#title 
+			{margin-left: 150px}
+		#title
+			{margin-right: 150px}
+		#my-list-item 
+			{margin-left: 150px}
+		#my-list-item
+			{margin-right: 150px}
+		#my-list-item2
+			{margin-left: 150px}
+		#my-list-item2
+			{margin-right: 150px}
+		#my-header 
+			{margin-top: 25px}

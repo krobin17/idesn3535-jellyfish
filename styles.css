@@ -36,6 +36,8 @@
 		p 
 			{margin-left: 150px;
 			margin-right: 150px}
+		#title
+			a {color: #CD853F}
 		img
 			{padding: 10px;
 			display: inline-block;}

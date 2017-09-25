@@ -5,6 +5,8 @@
 			{font-family: 'Lato', sans-serif;}
 		li 
 			{font-family: 'Lato', sans-serif;}
+		a
+			{font-family: 'Lato', sans-serif;}
 		#my-header 
 			{text-align: center;
 			margin-top: 25px;
@@ -23,9 +25,8 @@
 		.my-list-item2 
 			{font-size: 22px;
 			margin-left: 150px;
-			margin-right: 150px}
-		.my-list-item2 
-			{color: #00b38f;}
+			margin-right: 150px; 
+			color: #00b38f;}
 		.title 
 			{font-size: 22px;
 			margin-left: 150px;

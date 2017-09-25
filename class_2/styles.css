@@ -16,4 +16,5 @@ header a {
 #section2 {background: #FF0;
 	color: #000000;}
 #section3 {background: #00F;}
-#sidebar {background: #00FFFF;}
+#sidebar {background: #00FFFF;
+	padding: 10px}

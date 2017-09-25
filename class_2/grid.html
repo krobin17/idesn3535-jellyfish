@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Advanced Layouts: Flex</title>
+		<title>Advanced Layouts: Grid</title>
 		<link href="../normalize.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<style>
+			#content
+				{display: grid;
+				grid-template-columns: 2fr 1fr;
+				grid-template-rows: 33.3%;}
 			#sections
-				{display: flex;}
-			.section {flex: 1;}
+				{display: grid;
+					grid-column: 1;}
+			#sidebar
+				{grid-column: 2;}
+			@media (max-width: 600px) {
+			#content {grid-template-columns: 100%;}
+			#sidebar {grid-column: 1;}
+		}
 		</style>
 	</head>
 	<body>
@@ -20,10 +30,15 @@
 			<li><a href="responsive.html">Responsive</a></li>
 			</ul>
 		</header>
+		<div id="content">
 		<div id="sections">
 			<div id="section1" class="section"> <p>Before they sold out offal flannel succulents, enamel pin tilde semiotics cronut banjo. Church-key occupy poke asymmetrical, brooklyn farm-to-table la croix air plant trust fund intelligentsia jean shorts tousled brunch marfa chicharrones. Health goth semiotics XOXO artisan farm-to-table 3 wolf moon. Heirloom shoreditch activated charcoal, celiac lo-fi mumblecore knausgaard church-key before they sold out gochujang retro drinking vinegar semiotics crucifix. Farm-to-table lyft banh mi, roof party kitsch green juice gastropub snackwave knausgaard. Scenester asymmetrical williamsburg farm-to-table typewriter hot chicken next level selfies bitters authentic. Hell of man braid bitters irony. Tilde narwhal heirloom cloud bread, paleo etsy PBR. Hexagon readymade echo park roof party hammock marfa pok pok pop-up.</p></div>
 			<div id="section2" class="section"> <p>Jianbing lyft art party ethical polaroid vegan slow-carb live-edge. Poutine pok pok leggings glossier hot chicken. Tacos microdosing actually street art hashtag normcore lo-fi scenester pork belly fanny pack. Trust fund meditation kinfolk yuccie intelligentsia, venmo ethical ugh mlkshk pabst retro meh taiyaki. Vice meggings slow-carb, thundercats sriracha mixtape farm-to-table VHS. Put a bird on it thundercats readymade, farm-to-table dreamcatcher selfies twee artisan occupy glossier authentic. Fixie you probably haven't heard of them cloud bread seitan wayfarers schlitz ramps plaid bespoke PBR knausgaard, 8-bit shaman blue bottle. Church-key humblebrag street art bicycle rights, try-hard activated charcoal cold-pressed four dollar toast echo park. Four loko affogato kombucha you probably haven't heard of them tilde next level shoreditch activated charcoal polaroid austin bespoke. Enamel pin leggings tbh +1 wayfarers. Cornhole umami lomo trust fund, iPhone enamel pin migas bushwick banjo vaporware scenester aesthetic +1. Small batch poutine post-ironic tacos. DIY next level marfa 8-bit hashtag 3 wolf moon etsy yr echo park austin vaporware. Paleo cred retro, cornhole hashtag swag glossier franzen portland hot chicken fingerstache twee iPhone next level readymade.</p></div>
 			<div id="section3" class="section"> <p>Snackwave hella synth raclette kale chips. Taiyaki palo santo selfies crucifix scenester hammock. Hell of shaman messenger bag kitsch drinking vinegar, man braid venmo hashtag narwhal. 90's salvia scenester tbh. Messenger bag semiotics kinfolk letterpress. Quinoa shabby chic tote bag readymade chicharrones locavore fanny pack lomo fixie hoodie crucifix cred keytar. Echo park whatever slow-carb, raclette listicle raw denim pabst stumptown kitsch umami yr cliche adaptogen activated charcoal tumblr. Echo park farm-to-table intelligentsia put a bird on it, actually flexitarian plaid listicle ennui pitchfork tbh church-key fashion axe vice schlitz. Bitters ethical hella, ramps next level biodiesel poutine lyft pitchfork kitsch kale chips. Farm-to-table williamsburg pok pok health goth whatever echo park, dreamcatcher street art godard cardigan. Small batch wolf shoreditch church-key. Hexagon chambray kale chips slow-carb. Before they sold out prism next level offal venmo. Scenester godard kogi snackwave chicharrones, poutine four loko art party jianbing poke banh mi tbh pug.</p></div>
 		</div>
+		<div id="sidebar">
+			<p>Trust fund meditation kinfolk yuccie intelligentsia, venmo ethical ugh mlkshk pabst retro meh taiyaki. Vice meggings slow-carb, thundercats sriracha mixtape farm-to-table VHS. Put a bird on it thundercats readymade, farm-to-table dreamcatcher selfies twee artisan occupy glossier authentic. Fixie you probably haven't heard of them cloud bread seitan wayfarers schlitz ramps plaid bespoke PBR knausgaard, 8-bit shaman blue bottle. Church-key humblebrag street art bicycle rights, try-hard activated charcoal cold-pressed four dollar toast echo park. Four loko affogato kombucha you probably haven't heard of them tilde next level shoreditch activated charcoal polaroid austin bespoke. Enamel pin leggings tbh +1 wayfarers.</p>
+		</div>
+	</div>
 	</body>
 </html>

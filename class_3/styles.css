@@ -6,17 +6,7 @@
 				justify-content: space-between;
 				width: 100%}
 
-			.container {display: flex;
-				flex-direction: row}
-
-			.column1 {display: flex;
-				flex-wrap: wrap;}
-
-			.column2 {display: flex;
-				flex-wrap: wrap;}
-
-			.column3 {display: flex;
-				flex-wrap: wrap;}
+			.container {display: flex;}
 
 			.Article1 {display: flex;}
 
@@ -25,14 +15,15 @@
 			.Article2-2 {display: flex;
 				flex-direction: column;}
 
-			@media (max-width: 300px) {
+			@media (max-width: 600px) {
 				.column3 {order: 1;}
 			}
-
-			@media (max-width: 300px){
+			/*Mobile Version*/
+			@media (max-width: 420px){
 				#Subscribe {display: none;}
 				#theBostonGlobe {display: none;}
 				#Navigation {display: none;}
+				.container{flex-direction:column;}
 			}
 
 			#Subscribe {width: 500px; height: 30px; background-color: #d7df23; margin: 10px}
@@ -53,11 +44,11 @@
 			
 			#Image2 {width: 150px; height: 200px; background-color: #f68842; margin: 10px}
 			
-			#Title2 {width: 300px; height: 50px; background-color: #8c288f; margin: 10px}
+			#Title2 {width: 300px; height: 50px; background-color: #8c288f; margin: 10px;}
 			
 			#Subtitle2 {width: 300px; height: 150px; background-color: #b4241d; margin: 10px}
 			
-			#Title3 {width: 350px; height: 50px; background-color: #6f2b78; margin: 10px}
+			#Title3 {width: 350px; height: 50px; background-color: #6f2b78; margin: 10px;}
 			
 			#Article3 {width: 475px; height: 150px; background-color: #c11f3e; margin: 10px}
 			
@@ -77,21 +68,21 @@
 			
 			#ArticleLink2 {width: 100px; height: 50px; background-color: #00a8ea; margin: 10px}
 			
-			#Article7 {width: 350px; height: 200px; background-color: #cb2f1d; margin: 10px}
+			#Article7 {width: 350px; height: 150px; background-color: #cb2f1d; margin: 10px}
 			
-			#Image7 {width: 100px; height: 100px; background-color: #f58320; margin: 10px}
+			#Image7 {width: 75px; height: 75px; background-color: #f58320; margin: 10px}
 			
 			#ArticleLink3 {width: 125px; height: 50px; background-color: #3a55a6; margin: 10px}
 			
 			#Article8 {width: 350px; height: 150px; background-color: #a43937; margin: 10px}
 			
-			#Image8 {width: 100px; height: 100px; background-color: #f9a340; margin: 10px}
+			#Image8 {width: 75px; height: 75px; background-color: #f9a340; margin: 10px}
 			
 			#ArticleLink4 {width: 125px; height: 50px; background-color: #2d3a96; margin: 10px}
 			
 			#Article9 {width: 350px; height: 150px; background-color: #a51f44; margin: 10px}
 			
-			#Image9 {width: 100px; height: 100px; background-color: #f06022; margin: 10px}
+			#Image9 {width: 75px; height: 75px; background-color: #f06022; margin: 10px}
 			
 			#ArticleLink5 {width: 125px; height: 50px; background-color: #556cb3; margin: 10px}
 			

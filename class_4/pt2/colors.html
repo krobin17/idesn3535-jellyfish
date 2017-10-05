@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#splotch {width: 100px;
+			height: 100px;
+			border-radius: 100px;
+			margin: auto;
+			border: 1px solid #000;
+			margin-top: 100px}
+		#splotch.red {background: #FF0000}
+		#splotch.blue {background: #0000FF}
+		#splotch.yellow {background: #FFFF00}
+		#splotch.red.blue {background: #800080}
+		#splotch.red.yellow {background: #FFA500}
+		#splotch.yellow.blue {background: #008000}
+		#splotch.red.yellow.blue {background: #000000}
+		input.enabled {background: #00FF00}
+	</style>
+</head>
+<body>
+	<center>
+		<input type="button" value="red">
+		<input type="button" value="blue">
+		<input type="button" value="yellow">
+	</center>
+	<div id="splotch"></div>
+	<script>
+		var buttons = document.getElementsByTagName("input");
+		for(i=0; i<buttons.length; i++){
+		var button = buttons[i]
+		button.addEventListener("click",changeColor)
+		}
+		function changeColor (newColor)
+		{
+			var splotch = document.getElementById("splotch");
+			splotch.classList.toggle(newColor.currentTarget.value)
+
+		newColor.currentTarget.classList.toggle("enabled")
+		}
+		
+	</script>
+
+</body>
+</html>

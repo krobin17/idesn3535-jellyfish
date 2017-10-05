@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>More Javascript!</title>
+
+	<script>
+		
+		//Arrays
+		const array1 = [1, 2, 3, 4]
+		const array2 = ["one", "two", "three", "four"]
+		const array3 = ["one", 2, "three", true]
+		function concat(array1, array2){}
+
+		// Objects
+		//{key: "value"}
+		const fruits = {
+		apple: "A Red Fruit",
+		orange: "An Orange Fruit"
+		}
+		const user1 = {
+			name: "Kristina",
+			email: "krobinson.2013@gmail.com",
+			gender: "Female",
+			age: "22"
+		}
+			const user2 = {
+			name: "Lucy",
+			email: "Lngyun@gmail.com",
+			gender: "Female",
+			age: "24"
+		}
+		const users = [user1, user2];
+
+		//Loops
+		let i;
+		for (i = 0; i < users.length; i++) {
+			let user = users[i];
+			console.log(`${user.name} is ${user.age} years old`);
+		}
+
+			//While
+			//For
+			//forEach
+			users.forEach(function(user, i){
+                console.log(i);
+              console.log(user.name + " is " + user.age + " years old");
+            });
+            
+            const usersThatCanRentAnSUV = users.filter(function(user) {
+                return false;
+            });
+
+			function concat(array1, array2){
+				const newArray = [];
+				array1.forEach(function(element){
+					newArray.push(element)
+				})
+				array2.forEach(function(element){
+					newArray.push(element)
+				})
+				return newArray;
+			}
+
+			//Filter
+	</script>
+</head>
+<body>
+
+</body>
+</html>

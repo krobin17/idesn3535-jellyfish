@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip Calculator</title>
+	<style>
+	#container {background-color: #AAA;
+		width: 40%;
+		height: 500px;
+		padding: 50px;
+		margin-left: 200px}
+	.button {background-color: #62f53f}
+	.button:hover {background-color: #3febf5}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div>Tip Calculator</div>
+		<input type="text" id="billAmount">
+		<div>Tip Percent</div>
+			<button id="subtractButton" class="button">-</button>
+			<output id="percentField" class="output"></output>
+			<button id="addButton" class="button">+</button>
+		<div id="tipAmount" class="output"></div>
+		<div id="billTotal" class="output"></div>
+	</div>
+
+	<script>
+		let tipPercentage = 20;
+		const button = document.getElementById("subtractButton");
+		const addButton = document.getElementById("addButton");
+		const subtractButton = document.getElementById("subtractButton");
+
+		function calculate(){
+			console.log (tipPercentage = tipPercentage)
+		}
+		addButton.addEventListener ('click', function(){
+			tipPercentage += 1;
+			calculate ()
+		});
+		subtractButton.addEventListener ('click', function(){
+			tipPercentage -= 1;
+			calculate ()
+		});
+
+
+		button.addEventListener('mouseover', function() 
+			{button.classList.toggle('background-color');
+		});
+
+	</script>
+
+
+</body>
+</html>

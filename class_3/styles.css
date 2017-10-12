@@ -31,37 +31,46 @@
 				#theBostonGlobe {display: none;}
 				#Navigation {display: none;}
 				.container{flex-direction:column;}
+				.column1 {flex-grow: 100%}
+				.column2 {flex-grow: 100%}
+				.column3 {flex-grow: 100%}
 			}
 
-			#Subscribe {width: 500px; height: 30px; background-color: #d7df23; margin: 10px}
+			.column1 {width: 45%}
 
-			#Menu {width: 75px; height: 50px; background-color: #8dc63f; margin: 10px}
-			
-			#theBostonGlobe {width: 300px; height: 50px; background-color: #39b54a; margin: 10px}
-			
-			#SignIn {width: 200px; height: 50px; background-color: #009444; margin: 10px}
-			
-			#Navigation {width: 750px; height: 20px; background-color: #006838; margin: 10px; align-content: center;}
+			.column2 {width: 20%}
 
-			#Title1 {width: 475px; height: 125px; background-color: #8853a1; margin: 10px}
+			.column3 {width: 35%}
+
+			#Subscribe {width: 50%; height: 30px; background-color: #d7df23; margin: 10px}
+
+			#Menu {width: 10%; height: 50px; background-color: #8dc63f; margin: 10px}
 			
-			#Image1 {width: 100px; height: 100px; background-color: #ee2c24; margin: 10px}
+			#theBostonGlobe {width: 40%; height: 50px; background-color: #39b54a; margin: 10px}
 			
-			#Article1 {width: 350px; height: 100px; background-color: #f26533; margin: 10px}
+			#SignIn {width: 25%; height: 50px; background-color: #009444; margin: 10px}
+			
+			#Navigation {width: 65%; height: 20px; background-color: #006838; margin: 10px; align-content: center;}
+
+			#Title1 {height: 125px; background-color: #8853a1; margin: 10px}
+			
+			#Image1 {width: 20%; height: 100px; background-color: #ee2c24; margin: 10px}
+			
+			#Article1 {width: 75%; height: 100px; background-color: #f26533; margin: 10px}
 			
 			#Image2 {width: 100px; height: 150px; background-color: #f68842; margin: 10px}
 			
 			#Title2 {width: 350px; height: 50px; background-color: #8c288f; margin: 10px;}
 			
-			#Subtitle2 {width: 350px; height: 100px; background-color: #b4241d; margin: 10px}
+			#Subtitle2 {width: 350px; height: 90px; background-color: #b4241d; margin: 10px}
 			
 			#Title3 {width: 325px; height: 50px; background-color: #6f2b78; margin: 10px;}
 			
-			#Article3 {width: 475px; height: 150px; background-color: #c11f3e; margin: 10px}
+			#Article3 {height: 150px; background-color: #c11f3e; margin: 10px}
 			
 			#Image3 {width: 100px; height: 100px; background-color: #da6738; margin: 10px}
 			
-			#ArticleLink1 {width: 150px; height: 25px; background-color: #5fc9f3; margin: 10px}
+			#ArticleLink1 {width: 70%; height: 25px; background-color: #5fc9f3; margin: 10px}
 			
 			#Title4 {width: 200px; height: 150px; background-color: #542d5d; margin: 10px}
 			
@@ -69,25 +78,25 @@
 			
 			#Article5 {width: 200px; height: 110px; background-color: #980f13; margin: 10px}
 			
-			#Article6 {width: 200px; height: 155px; background-color: #ee294b; margin: 10px}
+			#Article6 {width: 200px; height: 150px; background-color: #ee294b; margin: 10px}
 			
 			#Image6 {width: 75px; height: 75px; background-color: #ee874d; margin: 10px}
 			
 			#ArticleLink2 {width: 100px; height: 25px; background-color: #00a8ea; margin: 10px}
 			
-			#Article7 {width: 350px; height: 110px; background-color: #cb2f1d; margin: 10px}
+			#Article7 {height: 107px; background-color: #cb2f1d; margin: 10px}
 			
 			#Image7 {width: 75px; height: 75px; background-color: #f58320; margin: 10px}
 			
 			#ArticleLink3 {width: 125px; height: 25px; background-color: #3a55a6; margin: 10px}
 			
-			#Article8 {width: 350px; height: 110px; background-color: #a43937; margin: 10px}
+			#Article8 {height: 107px; background-color: #a43937; margin: 10px}
 			
 			#Image8 {width: 75px; height: 75px; background-color: #f9a340; margin: 10px}
 			
 			#ArticleLink4 {width: 125px; height: 25px; background-color: #2d3a96; margin: 10px}
 			
-			#Article9 {width: 350px; height: 110px; background-color: #a51f44; margin: 10px}
+			#Article9 {width: 350px; height: 107px; background-color: #a51f44; margin: 10px}
 			
 			#Image9 {width: 75px; height: 75px; background-color: #f06022; margin: 10px}
 			

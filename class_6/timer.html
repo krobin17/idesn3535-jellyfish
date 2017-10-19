@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+	<link href="../normalize.css" rel="stylesheet" />
+</head>
+<body>
+	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<style>
+	body {font-family: 'Satisfy', cursive;}
+	button {font-family: 'Satisfy', cursive;}
+
+	#timer-box {margin-top: 100px;
+		margin-left: 400px}
+		
+	</style>
+	<div id="timer-box">
+		<div id="timer">
+			<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+		</div>
+		<button id="start-button">Start</button>
+		<div id="control-buttons">
+			<div>
+				<div>Hours</div>
+				<button class="control-button" data-amount="-3600">-</button>
+				<button class="control-button" data-amount="3600">+</button>
+			</div>
+			<div>
+				<div>Minutes</div>
+				<button class="control-button" data-amount="-60">-</button>
+				<button class="control-button" data-amount="60">+</button>
+			</div>
+			<div>
+				<div>Seconds</div>
+				<button class="control-button" data-amount="-1">-</button>
+				<button class="control-button" data-amount="1">+</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let seconds = 0;
+		function displayTime(amountOfSeconds) {
+			//define some temporary variables
+			let hours = 0;
+			let mins = 0;
+
+			//while amnt of secs is >= 3600sec(=1hr)
+			while (amountOfSeconds >= 3600) {
+				hours++;
+				//add 1 hour delete 3600 sec
+				amountOfSeconds = amountOfSeconds - 3600;
+			}
+
+			//while amnt secs is >= 60 (=1min)
+			while (amountOfSeconds >= 60){
+				mins++;
+				//add 1 min delete 60 sec
+				amountOfSeconds = amountOfSeconds - 60;
+			}
+			//dont have to loop through sec bc 1 sec = 1 sec
+			//now update screen elements
+			$("#hours").text(hours);
+			$("#minutes").text(mins);
+			$("#seconds").text(amountOfSeconds);
+		}
+		$(document).ready(function(){
+			$(".control-button").on("click", function(){
+				//get amnt defined in the data attrib. of button clicked
+				const amount = parseInt($(this).data("amount"));
+
+				//add amnt to sec var -# will subtract
+				seconds += amount;
+
+				//dont worry about neg so take whats bigger
+				//the amnt of sec or 0
+				seconds = Math.max(seconds, 0);
+
+				//display new time
+				displayTime(seconds)
+			})
+		let timer;
+		function tick(){
+			seconds--;
+			seconds = Math.max(seconds, 0);
+			displayTime(seconds);
+		}
+		$("#start-button").on("click", function(){
+			//if timer is running stop it
+			if (timer) {
+				clearInterval(timer);
+				timer = false;
+			} else {timer = setInterval(tick, 1000)
+			}
+		});
+		})
+		/*function pad(){
+			pad("#seconds", 2);
+			pad("#minutes", 2);
+			pad("#hours", 2)}*/
+	</script>
+
+</body>
+</html>

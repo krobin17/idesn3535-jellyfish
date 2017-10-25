@@ -5,50 +5,61 @@
 	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
 	<style>
 	body {font-family: 'Signika', sans-serif;}
-	#container {background-color: #AAA;
+	#container {background-color: #dcdada;
 		width: 40%;
-		height: 500px;
+		height: 200px;
 		padding: 50px;
-		margin-left: 200px}
+		margin-top: 75px;
+		border-radius: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;}
 
-	#bill_amount.bill_amount {width: 60px; height: 20px; background-color: #AAA; transition: background-color 2s}
-	#bill_amount.bill_amount.focus {width: 100px; height: 30px; background-color: #ADD8E6}
-	#button {background-color: #62f53f;
+	#bill_amount {width: 25px; height: 25px; background-color: #AAA; border-radius: 50px; padding-left: 20px; transition: background-color 2s, width 2s, height 2s; color: 2s}
+	#bill_amount.focus {width: 50px; height: 25px; background-color: #0d3a4c; color: #FFF; border-radius: 50px; padding-left: 20px;}
+	.button {background-color: #0d3a4c;
 		width: 50px;
-		height: 50px}
-	#button:hover {background-color: #3febf5}
+		height: 50px;
+		border-radius: 25px;
+		color: #FFF}
+	.percentage {display: flex; justify-content: space-between;}
+	#tip_amount_total {display: flex; justify-content: space-between;}
+	#tip_number {font-size: 40px}
 	</style>
 </head>
 <body>
+	<center>
 	<div id="container">
-		<div class="bill">
-			BILL AMOUNT
-			<input class="bill_amount" id="bill_amount"></input>
-		</div>
-		<div class="percentage">
-			<div class="tip_info">
-				<div id="tip_number"></div>
-				<div class="label">TIP PERCENT</div>
+			<div class="bill">
+				<font size="5"> BILL AMOUNT</font>
+				<input class="bill_amount" id="bill_amount"></input>
 			</div>
 
-			<div id="buttons">
-				<button class="button" id="subtract_button">-</button>
-				<button class="button" id="add_button">+</button>
+			<div class="percentage">
+					<button class="button" id="subtract_button">-</button>
+				<div class="tip_info">
+					<div id="tip_number"></div>
+				</div>
+					<button class="button" id="add_button">+</button>
 			</div>
 
-			<div class="amount"></div>
+				<div class="amount"></div>
+				<font size="5">TIP PERCENT</font>
+			<br>
+			<div id="tip_amount_total">
+				<div class="tip_dollar">
+					<font size="5">TIP AMOUNT</font>
+					<div id="tip_amount"></div>
+				</div>
 
-			<div class="tip_dollar">
-				<div id="tip_amount"></div>
-				<div class="label">TIP AMOUNT</div>
+				<div class="total">
+					<font size="5">TOTAL</font>
+					<div id="all_total"></div>
+				</div>
 			</div>
-		</div>
 
-		<div class="total">
-			<div>TOTAL</div>
-			<div id="all_total"></div>
 		</div>
-	</div>
+	</center>
 
 	<script>
 		
@@ -60,8 +71,8 @@
 		var add = document.getElementById("add_button");
 		var subtract = document.getElementById("subtract_button");
 		var bill_amount = document.getElementById("bill_amount");
-		var button = document.getElementsByClassName("button")
-		//const button = document.getElementById("buttons");
+		var add_button = document.getElementById("add_button")
+		var sub_button = document.getElementById("subtract_button")
 
 		let percentage_amount = 20;
 
@@ -71,7 +82,7 @@
 			percentage.innerHTML = percentage_amount + "%"
 
 		//bill amount
-		bill.value * (percentage_amount / 100)
+		bill.value * (percentage_amount / 100);
 
 		//do the math
 		//update tip amount & total
@@ -98,10 +109,9 @@
 		bill_amount.addEventListener('focus', function() 
 			{bill_amount.classList.toggle('focus');});
 
-		/*button.addEventListener('mouseover', function() 
-			{button.classList.toggle('background-color');
-		});*/
-
+		add_button.addEventListener('mouseover', function() 
+			{add_button.classList.toggle('hover');
+		});
 	</script>
 
 

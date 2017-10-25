@@ -12,33 +12,57 @@
 	body {font-family: 'Satisfy', cursive;}
 	button {font-family: 'Satisfy', cursive;}
 
-	#timer-box {margin-top: 100px;
-		margin-left: 400px}
-		
+	#timer-box {background-color: #dcdada;
+		width: 40%;
+		height: 400px;
+		padding: 50px;
+		margin-top: 75px;
+		border-radius: 50px;}
+	#timer {font-size: 80px}
+	#control-buttons {display: flex; justify-content: space-between;}
+	.control-button {background-color: #0d3a4c;
+		width: 50px;
+		height: 50px;
+		border-radius: 25px;
+		color: #FFF}
+	#start-button {width: 40%; 
+		height: 60px; 
+		border-radius: 25px; 
+		background-color: #0d3a4c; 
+		color: #FFF; 
+		font-size: 30px;
+		margin-bottom: 50px}
+	.hours {font-size: 30px}
+	.minutes {font-size: 30px}
+	.seconds {font-size: 30px}
+	.control-button {font-size: 20px}
 	</style>
+
+	<center>
 	<div id="timer-box">
 		<div id="timer">
 			<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
 		</div>
 		<button id="start-button">Start</button>
 		<div id="control-buttons">
-			<div>
-				<div>Hours</div>
+			<div class="hours">
 				<button class="control-button" data-amount="-3600">-</button>
 				<button class="control-button" data-amount="3600">+</button>
+				<div>Hours</div>
 			</div>
-			<div>
-				<div>Minutes</div>
+			<div class="minutes">
 				<button class="control-button" data-amount="-60">-</button>
 				<button class="control-button" data-amount="60">+</button>
+				<div>Minutes</div>
 			</div>
-			<div>
-				<div>Seconds</div>
+			<div class="seconds">
 				<button class="control-button" data-amount="-1">-</button>
 				<button class="control-button" data-amount="1">+</button>
+				<div>Seconds</div>
 			</div>
 		</div>
 	</div>
+	</center>
 
 	<script>
 		let seconds = 0;

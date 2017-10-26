@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tables</title>
+	<style>
+		table {border-collapse: collapse;}
+		tr:nth-child(odd) {background: #000; color: #FFF}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+		/*		const somethingTrue = true;
+				const somethingFalse = false;
+			// && and || or
+			if (somethingTrue) {
+				console.log("It's True!");
+			} else {console.log("It's Not true! :(");
+			}*/
+		
+		const thereAreDogs = true;
+        const thereAreCats = false;
+
+        // && means AND
+        // || means OR
+        if (thereAreDogs || thereAreCats) {
+          console.log("There are Dogs and cats!");
+        } else if (thereAreDogs) {
+          console.log("Just Dogs");
+        } else if (thereAreCats) {
+          console.log("Just Cats")
+        } else {
+          console.log("No animals");
+        }
+        const typeOfBirds = ["Parrot", "Finch", "Dirt Bird", "Pigeon", "Grackel", "Crow", "Kiwi", "Cardinal", "Chicken"];
+        let i = 0;
+        for (i = 0; i < typeOfBirds.length; i++){
+        	const bird = typeOfBirds[i];
+        	console.log(bird);
+
+        	const birdRow = document.createElement("tr");
+        	const birdName = document.createElement("td");
+        	birdName.innerText = bird;
+
+        	birdRow.append(birdName)
+
+        	$(birdRow).append("<td>"+bird.length+"<td>");
+        	//same as above $(birdRow).append(`<td>${bird.length}<td>`);
+
+
+        	$("table tbody").append(birdRow);        	
+
+        }
+        	console.log("Loop is Done!");
+        });
+	</script>
+</head>
+<body>
+	<h1>Tables</h1>
+<!-- this is a comment in html command / makes a line a comment-->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Bird</th>
+				<th>Length</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -86,9 +86,14 @@
 			}
 			//dont have to loop through sec bc 1 sec = 1 sec
 			//now update screen elements
-			$("#hours").text(hours);
-			$("#minutes").text(mins);
-			$("#seconds").text(amountOfSeconds);
+			function pad(number){
+			if (number < 10){ 
+				return "0" + number;}
+				return number;
+			}
+			$("#hours").text(pad(hours));
+			$("#minutes").text(pad(mins));
+			$("#seconds").text(pad(amountOfSeconds));
 		}
 		$(document).ready(function(){
 			$(".control-button").on("click", function(){
@@ -124,6 +129,8 @@
 			pad("#seconds", 2);
 			pad("#minutes", 2);
 			pad("#hours", 2)}*/
+
+		
 	</script>
 
 </body>

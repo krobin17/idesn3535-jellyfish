@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New York Times</title>
+	<link href="../normalize.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<style>
+		body {font-family: 'Noto Sans', sans-serif;
+			background: #233A61}
+		li {background: #9ebbec;
+			width: 75%;
+			margin: auto;
+			margin-top: 75px;
+			padding: 30px;
+			color: #233A61;
+			overflow: hidden;}
+		ul {list-style-type: none;}
+		img {width: 50%;
+			float: left;
+			margin-right: 20px}
+		h2 {font-size: 30px}
+		p {font-size: 20px}
+		div {font-size: 10px}
+	</style>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			//using API
+			var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+			var apiKey = "bbccb6bb02904a1fba32b091dcd9189e";
+
+			$.ajax({
+				url: url,
+				data: {
+					'api-key': apiKey
+				},
+				success: function(result){
+					const articles = result.response.docs;
+					const articleList = document.createElement('ul');
+					$("#main").append(articleList);
+
+					//get header
+					articles.forEach(function(article){
+						const articleItem = document.createElement('li');
+						const articleHeader = document.createElement('h2');
+						articleHeader.innerHTML = article.headline.main;
+						articleItem.append(articleHeader)
+						articleList.append(articleItem);
+					//make sure images & make sure 1st element is an image
+					//not very robust no videos can be expanded
+					//get images
+					if (article.multimedia.length > 0 && article.multimedia[0].type === "image"){
+						const articleImage = document.createElement('img');
+						//relative URLs so we need nytimes.com first
+						articleImage.src = "https://nytimes.com/" + article.multimedia[0].url;
+						articleItem.append(articleImage);
+						articleItem.classList.add('has-image');
+					}
+
+					//summary
+					const articleSummary = document.createElement('p');
+					articleSummary.innerHTML = article.snippet;
+					articleItem.append(articleSummary);
+
+					//google nicer pub date
+					//pub date
+					const pubDate = document.createElement('div');
+					pubDate.classList.add('pub-date');
+					pubDate.innerText = new Date(article.pub_date)
+					articleItem.append(pubDate);
+				});
+				},
+
+				error: function(err){
+					throw err;}
+			})
+		});
+	</script>
+
+</head>
+<body>
+<div id="main"></div>
+
+</body>
+</html>

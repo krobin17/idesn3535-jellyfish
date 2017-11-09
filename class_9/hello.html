@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+	<script>
+		function getParameterByName(name) {
+  			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+     		 results = regex.exec(location.search);
+  			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		};
+		$(document).ready(function(){
+			$("#name").text(getParameterByName("firstname")+" "+getParameterByName("lastname"));
+		})
+	</script>
+
+</head>
+<body>
+	Hello, <span id="name"></span>!
+
+</body>
+</html>

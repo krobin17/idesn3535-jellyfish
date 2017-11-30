@@ -40,36 +40,36 @@
 					const articleList = document.createElement('ul');
 					$("#main").append(articleList);
 
-					//get header
-					articles.forEach(function(article){
-						const articleItem = document.createElement('li');
-						const articleHeader = document.createElement('h2');
-						articleHeader.innerHTML = article.headline.main;
-						articleItem.append(articleHeader)
-						articleList.append(articleItem);
-					//make sure images & make sure 1st element is an image
-					//not very robust no videos can be expanded
-					//get images
-					if (article.multimedia.length > 0 && article.multimedia[0].type === "image"){
-						const articleImage = document.createElement('img');
-						//relative URLs so we need nytimes.com first
-						articleImage.src = "https://nytimes.com/" + article.multimedia[0].url;
-						articleItem.append(articleImage);
-						articleItem.classList.add('has-image');
-					}
+						//get header
+						articles.forEach(function(article){
+								const articleItem = document.createElement('li');
+								const articleHeader = document.createElement('h2');
+								articleHeader.innerHTML = article.headline.main;
+								articleItem.append(articleHeader)
+								articleList.append(articleItem);
+							//make sure images & make sure 1st element is an image
+							//not very robust no videos can be expanded
+							//get images
+							if (article.multimedia.length > 0 && article.multimedia[0].type === "image"){
+								const articleImage = document.createElement('img');
+								//relative URLs so we need nytimes.com first
+								articleImage.src = "https://nytimes.com/" + article.multimedia[0].url;
+								articleItem.append(articleImage);
+								articleItem.classList.add('has-image');
+							}
 
-					//summary
-					const articleSummary = document.createElement('p');
-					articleSummary.innerHTML = article.snippet;
-					articleItem.append(articleSummary);
+							//summary
+							const articleSummary = document.createElement('p');
+							articleSummary.innerHTML = article.snippet;
+							articleItem.append(articleSummary);
 
-					//google nicer pub date
-					//pub date
-					const pubDate = document.createElement('div');
-					pubDate.classList.add('pub-date');
-					pubDate.innerText = new Date(article.pub_date)
-					articleItem.append(pubDate);
-				});
+							//google nicer pub date
+							//pub date
+							const pubDate = document.createElement('div');
+							pubDate.classList.add('pub-date');
+							pubDate.innerText = new Date(article.pub_date)
+							articleItem.append(pubDate);
+					});
 				},
 
 				error: function(err){

@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Final Project Title Here</title>
+	<title>Flicks To See</title>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
 	<script src="utils.js"></script>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="template.js.html"></script>
 	<script>
 		$(document).ready(function(){
-			
-		});
+				$("body").prepend(getTemplate(headerTemplate, {class: "home", title: "Home"}))
+				$("body").append(getTemplate(footerTemplate, {title: "Home"}))
+			let previousScrollTop = 0;
+				$(document).on('scroll', function(e){
+					let currentScrollTop = $(document).scrollTop();
+						if (currentScrollTop > previousScrollTop){
+							$('header').addClass('hidden');
+						} else {
+							$('header').removeClass('hidden');
+						}
+						previousScrollTop = currentScrollTop;
+				});
+			var url = "http://www.bvandorn.com/idesn-3535/apis/jellyfish.json";
+			$.ajax({
+  				url: url,
+  				success: function(result){
+    				//console.log(response);
+  					const movies = result.response.docs;
+					const movieList = document.createElement('ul');
+					$("#viewed").append(movieList);
+
+					movies.forEach(function(moviePics){
+						const articleImage = document.createElement("img");
+					articleImage.src = "";
+					movieItem.append(articleImage);
+					})
+				}
+			});
+	});
 	</script>
 </head>
 <body>
-	FINAL
+	
+	<div id="viewed"></div>
 
 </body>
 </html>

@@ -20,3 +20,4 @@ function processTemplate(template, context){
 function getTemplate(template, context) {
 	return $(processTemplate(template, context));
 }
+

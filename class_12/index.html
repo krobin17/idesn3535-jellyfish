@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ratings API</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+	<script src="./ratingapi.js"></script>
+	<script>
+		function renderRatings(){
+			$("#ratings").html("");
+			const ratings = getRatings().ratings;
+			let totalStars = 0;
+			let totalRatings = 0;
+			//console.log(ratings);
+			ratings.forEach(function(r){
+				if (r){
+					const row = document.createElement("div");row.innerText = `Stars: ${r.stars} ${r.comment}`;
+						$("#ratings").append(row);
+						totalRatings++;
+						totalStars += r.stars;
+					}
+			});
+			const averageRating = totalStars / totalRatings;
+			$("#average").text("Average Stars: "+averageRating.toFixed(2));
+			$("#all-stars").css("width", averageRating/5*100 + "%");
+		}
+		$(document).ready(function(){
+			setTimeout(renderRatings);
+			$("#submit-button").on("click", function(){
+				const starAmount = parseInt($("#my-dropdown").val());
+				const comment = $("#my-comment").val();
+				//console.log(starAmount);
+				//console.log(comment);
+				addRating({stars: starAmount, comment: comment});
+				renderRatings();
+				$("#my-comment").val("");
+				$("#my-dropdown").val("1");
+			});
+
+		});
+	</script>
+	<style>
+		#ratings {line-height: 50px;}
+		body {margin-left: 50px}
+		#average-stars {position: relative;
+			width: 84px;
+			height: 15px;}
+		#no-stars, #all-stars {position: absolute;
+			left: 0;
+			top: 0;}
+		#all-stars {overflow: hidden;
+			transition: width 500ms;
+			width: 0%;}
+	</style>
+</head>
+<body>
+<h1>Ratings API</h1>
+<div id="average"></div>
+<div id="average-stars">
+	<div id="no-stars"><img src="nostars.svg"></div>
+	<div id="all-stars"><img src="allstars.svg"></div>
+</div>
+<div id="ratings"></div>
+<select id="my-dropdown">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+</select>
+<input id="my-comment"/>
+<button id="submit-button">Submit</button>
+</body>
+</html>

@@ -21,11 +21,27 @@
 						}
 						previousScrollTop = currentScrollTop;
 				});
+			var url = "http://www.bvandorn.com/idesn-3535/apis/jellyfish.json";
+			$.ajax({
+  				url: url,
+  				success: function(response){
+    				//console.log(response);
+  					const movies = response.movies;
+					const movieList = document.createElement('ul');
+					$("#viewed").append(movieList);
+					movies.forEach(function(moviePics){
+						const articleImage = document.createElement("img");
+						//articleImage.src = moviePics.media[1].url;
+						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						movieList.append(articleImage);
+					})
+				}
+			});
 		});
 	</script>
 </head>
 <body>
-		<div id="viewed"><h1>Viewed Movies</h1></div>
+		<div class="one-box" id="viewed"><h1>Viewed Movies</h1></div>
 
 </body>
 </html>

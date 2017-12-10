@@ -28,23 +28,27 @@
   				success: function(response){
     				//console.log(response);
   					const movies = response.movies;
-					const movieList = document.createElement('ul');
+					const movieList = document.createElement('a');
+					// a.href = "new_movies.html"
 					$("#home-viewed").append(movieList);
-
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
 						//articleImage.src = moviePics.media[1].url;
 						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
 						movieList.append(articleImage);
 					})
-					/*$("#home-viewed").append(movieList);
-
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
 						//articleImage.src = moviePics.media[1].url;
 						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
-						movieList.append(articleImage);
-					})*/
+						$("#home-suggested").append(articleImage);
+					})
+					movies.forEach(function(moviePics){
+						const articleImage = document.createElement("img");
+						//articleImage.src = moviePics.media[1].url;
+						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						$("#home-new").append(articleImage);
+					})
 				}
 			});
 	});
@@ -55,8 +59,7 @@
 	<div id="home-content">
 		<div id="home-viewed"><h1>Previously Viewed Movies<h1></div>
 		<div id="home-right">
-			<div class="home-right" id="home-suggested"><h1>Suggested 
-			Movies</h1></div>
+			<div class="home-right" id="home-suggested"><h1>Suggested Movies</h1></div>
 			<div class="home-right" id="home-new"><h1>New Movies</h1></div>
 		</div>
 	</div>

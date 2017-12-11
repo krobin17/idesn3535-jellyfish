@@ -79,7 +79,9 @@ ul.viewed-nav li.viewed-nav {border-bottom: 8px solid #F4F4F4;}
 h1 {font-size: 20px;
 	color: #560e66;
 	margin: 0;
-	margin-bottom: 10px;}
+	margin-bottom: 10px;
+	-webkit-column-span: all;
+	column-span: all;}
 
 #home-viewed a {display: grid;
 	grid-template-columns: 30% 30% 30%;
@@ -164,3 +166,18 @@ h1 {font-size: 20px;
 	
 #suggested-try img {width: 100%;
 	border: 1px solid #232329}
+
+#movie-content {margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;}
+
+#movie-media {width: 35%;
+	margin-right: 15px;
+	height: 600px;
+	background: #9B9B9B;
+	padding: 15px;}
+
+#movie-info {width: 65%;
+	height: 600px;
+	background: #9B9B9B;
+	padding: 15px;}

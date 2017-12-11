@@ -21,7 +21,6 @@
 						}
 						previousScrollTop = currentScrollTop;
 				});
-
 			var url = "http://www.bvandorn.com/idesn-3535/apis/jellyfish.json";
 			$.ajax({
   				url: url,
@@ -29,26 +28,28 @@
     				//console.log(response);
   					const movies = response.movies;
 					const movieList = document.createElement('a');
-					// a.href = "new_movies.html"
+					//const link = document.createElement("a")
+					//link.src = "/movie.html?title="+movie.title;
 					$("#home-viewed").append(movieList);
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
-						//articleImage.src = moviePics.media[1].url;
-						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						articleImage.src = moviePics.media[1].url;
+						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
 						movieList.append(articleImage);
 					})
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
-						//articleImage.src = moviePics.media[1].url;
-						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						articleImage.src = moviePics.media[1].url;
+						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
 						$("#home-suggested").append(articleImage);
 					})
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
-						//articleImage.src = moviePics.media[1].url;
-						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						articleImage.src = moviePics.media[1].url;
+						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
 						$("#home-new").append(articleImage);
 					})
+
 				}
 			});
 	});

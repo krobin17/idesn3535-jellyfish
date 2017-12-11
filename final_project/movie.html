@@ -9,8 +9,8 @@
 	<script src="template.js.html"></script>
 	<script>
 		$(document).ready(function(){
-				$("body").prepend(getTemplate(headerTemplate, {class: "viewed-nav", title: "Viewed"}))
-				$("body").append(getTemplate(footerTemplate, {title: "Viewed"}))
+				$("body").prepend(getTemplate(headerTemplate, {class: "home", title: "Home"}))
+				$("body").append(getTemplate(footerTemplate, {title: "Home"}))
 			let previousScrollTop = 0;
 				$(document).on('scroll', function(e){
 					let currentScrollTop = $(document).scrollTop();
@@ -27,21 +27,24 @@
   				success: function(response){
     				//console.log(response);
   					const movies = response.movies;
-					const movieList = document.createElement('ul');
-					$("#viewed").append(movieList);
-					movies.forEach(function(moviePics){
-						const articleImage = document.createElement("img");
-						articleImage.src = moviePics.media[1].url;
-						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
-						movieList.append(articleImage);
-					})
+					let currentMovie;
+					const title = getParameterByName('title');
+					movies.forEach(function(movie){
+   						if (movie.title === title){
+     					currentMovie = movie;
+   						}
+					});
 				}
 			});
-		});
+	});
 	</script>
+
 </head>
 <body>
-		<div class="one-box" id="viewed"><h1>Viewed Movies</h1></div>
+	<div id="movie-content">
+		<div id="movie-media"></div>
+		<div id="movie-info"></div>
+	</div>
 
 </body>
 </html>

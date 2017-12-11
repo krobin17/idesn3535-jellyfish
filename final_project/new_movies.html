@@ -31,8 +31,8 @@
 					$("#new").append(movieList);
 					movies.forEach(function(moviePics){
 						const articleImage = document.createElement("img");
-						//articleImage.src = moviePics.media[1].url;
-						articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
+						articleImage.src = moviePics.media[1].url;
+						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
 						movieList.append(articleImage);
 					})
 				}

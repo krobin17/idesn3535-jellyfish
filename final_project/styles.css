@@ -181,3 +181,19 @@ h1 {font-size: 20px;
 	height: 600px;
 	background: #9B9B9B;
 	padding: 15px;}
+
+/*Tablet Version*/
+@media screen and (max-width: 700px;){
+	body {width: 80%;}
+	#home-content {display: inline;}
+	#home-viewed {width: 100%;}
+	#home-right {width: 100%;}
+	#home-viewed a {grid-template-columns: 20% 20% 20% 20% 20%;}
+	#home-suggested {grid-template-columns: 20% 20% 20% 20% 20%;}
+	#home-new {grid-template-columns: 20% 20% 20% 20% 20%;}
+}
+
+/*Mobile Version*/
+@media screen and (max-width: 500px;){
+	#content {flex-direction: row;}
+}

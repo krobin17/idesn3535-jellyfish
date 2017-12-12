@@ -30,10 +30,12 @@
 					const movieList = document.createElement('ul');
 					$("#new").append(movieList);
 					movies.forEach(function(moviePics){
+						const link = document.createElement("a");
+						link.href = "movie.html?title="+moviePics.title;
 						const articleImage = document.createElement("img");
 						articleImage.src = moviePics.media[1].url;
-						//articleImage.src = "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0OTQ3MjgzN15BMl5BanBnXkFtZTcwMjMyNzg3Mg@@._V1_.jpg";
-						movieList.append(articleImage);
+						link.append(articleImage);
+						movieList.append(link);
 					})
 				}
 			});

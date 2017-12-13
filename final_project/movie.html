@@ -9,6 +9,24 @@
 	<script src="./ratingapi.js"></script>
 	<script src="template.js.html"></script>
 	<script>
+		function renderRatings(){
+			$("#ratings").html("");
+			const ratings = getRatings().ratings;
+			let totalStars = 0;
+			let totalRatings = 0;
+			//console.log(ratings);
+			ratings.forEach(function(r){
+				if (r){
+					const row = document.createElement("div");row.innerText = `Stars: ${r.stars} ${r.comment}`;
+						$("#ratings").append(row);
+						totalRatings++;
+						totalStars += r.stars;
+					}
+			});
+			const averageRating = totalStars / totalRatings;
+			$("#average").text("Average Stars: "+averageRating.toFixed(2));
+			$("#all-stars").css("width", averageRating/5*100 + "%");
+		}
 		$(document).ready(function(){
 				$("body").prepend(getTemplate(headerTemplate, {class: "home", title: "Home"}))
 				$("body").append(getTemplate(footerTemplate, {title: "Home"}))
@@ -32,56 +50,51 @@
 					const title = getParameterByName('title');
 					movies.forEach(function(movie){
    						if (movie.title === title){
-     					currentMovie = movie;}
-   						console.log(movie);
-   						$("#movie-info").text(movie.title);
-   						$("#movie-info").append(movie.summary);
-   						$("#movie-info").append(movie.genre);
-   						$("#movie-info").append(movie.rated);
-   						$("#movie-info").append(movie.runtime);
-   						$("#movie-info").append(movie.release_date);
-   						$("#movie-info").append(movie.director);
-   						$("#movie-info").append(movie.cast);
+     					currentMovie = movie;
+	   						console.log(movie);
+
+	   						/*const movieInfo = document.createElement("li");
+	   						$("#movie-info").append(movieInfo);
+
+	   						const movieTitle = document.createElement("h1");
+	   						movieTitle.innterHTML = movie.title;
+	   						movieInfo.append(movie.title);
+
+	   						const movieSummary = document.createElement("li");
+	   						movieSummary.innterHTML = movie.summary;
+	   						movieInfo.append(movie.summary);*/
+	   						$("#movie-info").text(movie.title).append("<br>").append("<br>");
+	   						$("#movie-info").append(movie.summary).append("<br>").append("<br>");
+	   						$("#movie-info").append(movie.genre).append("<br>");
+	   						$("#movie-info").append(movie.rated).append("<br>");
+	   						$("#movie-info").append(movie.runtime).append("<br>");
+	   						$("#movie-info").append(movie.release_date).append("<br>");
+	   						$("#movie-info").append(movie.director).append("<br>").append("<br>");
+	   						$("#movie-info").append(movie.cast).append("<br>").append("<br>");
+	   						setTimeout(renderRatings);
+							$("#submit-button").on("click", function(){
+								const starAmount = parseInt($("#my-dropdown").val());
+								const comment = $("#my-comment").val();
+								//console.log(starAmount);
+								//console.log(comment);
+								addRating({stars: starAmount, comment: comment});
+								renderRatings();
+								$("#my-comment").val("");
+								$("#my-dropdown").val("1");
+							});
+	   					}
    					});
    					movies.forEach(function(movie){
    						if (movie.title === title){
-     					currentMovie = movie;}
-   						console.log(movie);
-   						$("#movie-media").append(movie.media[1])
-   						//<iframe width="560" height="315" src="movies.media[0].url" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-   						$("#movie-media").append(movie.media[0])
+     					currentMovie = movie;
+	   						console.log(movie);
+	   						$("#movie-media").append(`<img src="${movie.media[1].url}" />`).append("<br>");
+	   						$("#movie-media").append(`<iframe width="560" height="315" src="${movie.media[0].url}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>`)
+	   					}
 					});					
 				}
 			});
-			function renderRatings(){
-				$("#ratings").html("");
-				const ratings = getRatings().ratings;
-				let totalStars = 0;
-				let totalRatings = 0;
-				//console.log(ratings);
-				ratings.forEach(function(r){
-					if (r){
-						const row = document.createElement("div");row.innerText = `Stars: ${r.stars} ${r.comment}`;
-							$("#ratings").append(row);
-							totalRatings++;
-							totalStars += r.stars;
-						}
-				});
-				const averageRating = totalStars / totalRatings;
-				$("#average").text("Average Stars: "+averageRating.toFixed(2));
-				$("#all-stars").css("width", averageRating/5*100 + "%");
-			}
-				setTimeout(renderRatings);
-				$("#submit-button").on("click", function(){
-					const starAmount = parseInt($("#my-dropdown").val());
-					const comment = $("#my-comment").val();
-					//console.log(starAmount);
-					//console.log(comment);
-					addRating({stars: starAmount, comment: comment});
-					renderRatings();
-					$("#my-comment").val("");
-					$("#my-dropdown").val("1");
-				});
+
 	});
 	</script>
 
@@ -89,22 +102,25 @@
 <body>
 	<div id="movie-content">
 		<div id="movie-media"></div>
-		<div id="movie-info">
-			<div id="average"></div>
-			<div id="average-stars">
-				<div id="no-stars"><img src="images/nostars.svg"></div>
-				<div id="all-stars"><img src="images/allstars.svg"></div>
+		<div id="movie-right">
+			<div class = "movie-right" id="movie-info"></div>
+			<div class = "movie-right" id="movie-comment-rating">
+				<div id="average"></div>
+				<div id="average-stars">
+					<div id="no-stars"><img src="images/nostars.svg"></div>
+					<div id="all-stars"><img src="images/allstars.svg"></div>
+				</div>
+				<div id="ratings"></div>
+				<select id="my-dropdown">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<input id="my-comment"/>
+				<button id="submit-button">Submit</button>
 			</div>
-			<div id="ratings"></div>
-			<select id="my-dropdown">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-			<input id="my-comment"/>
-			<button id="submit-button">Submit</button>
 		</div>
 	</div>
 
